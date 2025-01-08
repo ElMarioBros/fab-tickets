@@ -15,6 +15,7 @@
                                 <th class="p-4 text-sm font-normal leading-none text-slate-600">Boletos</th>
                                 <th class="p-4 text-sm font-normal leading-none text-slate-600">Día</th>
                                 <th class="p-4 text-sm font-normal leading-none text-slate-600">Celular</th>
+                                <th class="p-4 text-sm font-normal leading-none text-slate-600">Fecha</th>
                                 <th class="p-4 text-sm font-normal leading-none text-slate-600"></th>
                             </tr>
                             </thead>
@@ -32,6 +33,9 @@
                                     </td>
                                     <td class="p-4 border-b border-slate-200 py-5">
                                         <p class="text-sm text-slate-500">{{ $reservation->phone_number }}</p>
+                                    </td>
+                                    <td class="p-4 border-b border-slate-200 py-5">
+                                        <p class="text-sm text-slate-500">{{ \Carbon\Carbon::parse($reservation->created_at)->format('Y-m-d H:i') }}</p>
                                     </td>
                                     <td class="p-4 border-b border-slate-200 py-5">
                                         <a href="{{ route('reservation.view', $reservation) }}" class="text-slate-500 hover:text-slate-700">
