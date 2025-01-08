@@ -26,4 +26,6 @@ Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
 
+Route::get('/serie-del-caribe', fn() => view('serie-del-caribe'));
+
 require __DIR__.'/auth.php';
